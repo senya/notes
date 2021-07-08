@@ -15,7 +15,9 @@ Add at the end, exactly before last `</domain>` line:
 ```xml
   <commandline xmlns="http://libvirt.org/schemas/domain/qemu/1.0">
     <arg value='-trace'/>
-    <arg value='handle_qmp_command,monitor_qmp_respond'/>
+    <arg value='handle_qmp_command'/>
+    <arg value='-trace'/>
+    <arg value='monitor_qmp_respond'/>
   </commandline>
 ```
 If you see, that xml already contains something like
