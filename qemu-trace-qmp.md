@@ -29,7 +29,7 @@ If you see, that xml already contains something like
 follow this style and just add
 ```xml
     <qemu:arg value='-trace'/>
-    <qemu:arg value='handle_qmp_command,monitor_qmp_respond'/>
+    <qemu:arg value='handle_qmp_command'/>
 ```
 
 2. Temporarily, enable/disable trace point in running guest:
