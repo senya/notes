@@ -1,4 +1,4 @@
-# forwad gpg keys by ssh
+# Forward gpg keys by ssh
 
 https://superuser.com/a/1329299/409543 :
 
