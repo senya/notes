@@ -1,3 +1,8 @@
+# Change root password in the image
+```
+virt-customize -a jammy-server-cloudimg-amd64.img --root-password password:123 --uninstall cloud-init
+```
+
 # Forward gpg keys by ssh
 
 https://superuser.com/a/1329299/409543 :
