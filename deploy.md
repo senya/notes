@@ -3,6 +3,29 @@
 virt-customize -a jammy-server-cloudimg-amd64.img --root-password password:123 --uninstall cloud-init
 ```
 
+# Resize vm image
+```
+virt-filesystems --long -h --all -a olddisk
+qemu-img create -f qcow2 -o preallocation=metadata newdisk.qcow2 15G
+virt-resize --expand /dev/sda2 olddisk newdisk.qcow2
+```
+
+Если после этого попадаем в grub-rescue, то там восстанавливаемся примерно так:
+```
+ls   # видим что есть
+set  # видим неправильные переменные
+set VAR=VALUE  # выправляем переменные
+insmod ext2
+insmod normal
+normal
+```
+
+Загрузившись в гостя зовем (по крайней мере для debian11):
+```
+grub-install /dev/sda
+```
+
+
 # Forward gpg keys by ssh
 
 https://superuser.com/a/1329299/409543 :
